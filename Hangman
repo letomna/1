@@ -1,0 +1,38 @@
+import random
+
+def hangman_game():
+words = ["python", "java", "javascript", "programming", "developer", "computer", "keyboard"]
+chosen_word = random.choice(words).lower()
+guessed_letters = []
+tries = 6
+
+print("Welcome to Hangman!")
+hidden_word = ["_"] * len(chosen_word)
+
+while tries > 0 and "_" in hidden_word:
+print(" ".join(hidden_word))
+guess = input("Guess a letter: ").lower()
+
+if len(guess) == 1 and guess.isalpha():
+if guess in guessed_letters:
+print("You've already guessed that letter!")
+elif guess in chosen_word:
+print("Good guess!")
+guessed_letters.append(guess)
+for i in range(len(chosen_word)):
+if chosen_word[i] == guess:
+hidden_word[i] = guess
+else:
+print("Incorrect guess!")
+guessed_letters.append(guess)
+tries -= 1
+print("You have", tries, "tries remaining.")
+else:
+print("Please enter a valid single letter guess.")
+
+if "_" not in hidden_word:
+print("Congratulations, you guessed the word:", chosen_word)
+else:
+print("Sorry, you're out of tries. The word was:", chosen_word)
+
+hangman_game()
