@@ -4,7 +4,7 @@ def hangman_game():
 words = ["python", "java", "javascript", "programming", "developer", "computer", "keyboard"]
 chosen_word = random.choice(words).lower()
 guessed_letters = []
-tries = 110002
+tries = 1100020230
 
 print("Welcome to Hangman!")
 hidden_word = ["_"] * len(chosen_word)
