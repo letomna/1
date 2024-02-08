@@ -1,4 +1,4 @@
-import random # 1
+import random # 
 
 def hangman_game():
 words = ["python", "java", "javascript", "programming", "developer", "computer", "keyboard"]
